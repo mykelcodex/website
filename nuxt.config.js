@@ -1,4 +1,4 @@
-
+import dotenv from "dotenv"; dotenv.config();
 export default {
   /*
   ** Nuxt rendering mode
@@ -14,6 +14,12 @@ export default {
   ** Headers of the page
   ** See https://nuxtjs.org/api/configuration-head
   */
+
+ env: {
+    CONTENTFUL_SPACE: process.env.CTF_SPACE_ID,
+    CONTENTFUL_ACCESSTOKEN: process.env.CTF_ACCESS_TOKEN
+  },
+
   head: {
     title: process.env.npm_package_name || '',
     meta: [
@@ -27,6 +33,10 @@ export default {
     ]
   },
   /*
+  ** Customize the progress-bar color
+  */
+ loading: { color: '#FFC25C' },
+  /*
   ** Global CSS
   */
   css: [
@@ -37,6 +47,9 @@ export default {
   ** https://nuxtjs.org/guide/plugins
   */
   plugins: [
+    "~/plugins/contentful",
+    "~/plugins/posts",
+    '~/plugins/day',
   ],
   /*
   ** Auto import components
@@ -54,7 +67,13 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
+    '@nuxtjs/dotenv',
+    '@nuxtjs/markdownit',
   ],
+  
+  markdownit:{
+    injected: true
+  },
   /*
   ** Build configuration
   ** See https://nuxtjs.org/api/configuration-build/

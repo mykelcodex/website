@@ -10,9 +10,15 @@
     "serve": "nuxt serve"
   },
   "dependencies": {
+    "@nuxtjs/dotenv": "^1.4.1",
+    "@nuxtjs/markdownit": "^1.2.10",
+    "contentful": "^7.14.6",
+    "dayjs": "^1.8.30",
     "nuxt": "^2.13.0"
   },
   "devDependencies": {
-    "@nuxtjs/tailwindcss": "^2.0.0"
+    "@nuxtjs/tailwindcss": "^2.0.0",
+    "node-sass": "^4.14.1",
+    "sass-loader": "^9.0.2"
   }
 }
