@@ -1,4 +1,6 @@
 import dotenv from "dotenv"; dotenv.config();
+const client = require("contentful");
+
 export default {
   /*
   ** Nuxt rendering mode
@@ -73,6 +75,18 @@ export default {
   
   markdownit:{
     injected: true
+  },
+  generate: {
+    routes() {
+      return Promise.all([
+        client.getEntries({
+          content_type: 'post',
+          order: '-sys.createdAt',
+        })
+      ]).then(([blogEntries]) => {
+        return [...blogEntries.items.map(entry => entry.fields.slug)];
+      });
+    }
   },
   /*
   ** Build configuration
