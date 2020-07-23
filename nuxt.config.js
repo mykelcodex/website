@@ -76,6 +76,7 @@ export default {
   markdownit:{
     injected: true
   },
+  
   generate: {
     routes() {
       return Promise.all([
