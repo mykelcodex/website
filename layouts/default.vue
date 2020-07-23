@@ -7,7 +7,7 @@
           <nuxt-link to="/"><img :src="logo" class="w-10 lg:w-12" alt="Oke Michael"/></nuxt-link>
           <div>
             <ul class="flex items-center">
-              <nuxt-link to="/page"><li :class="this.$route.path == '/page' ? 'bg-yellow text-white' : 'text-light-purple'" class="font-bold text-sm md:text-base lg:text-lg border-2 px-3 md:px-6 py-1 rounded hover:bg-yellow border-yellow active:text-white hover:text-white transition duration-500 ease-in-out">Blog</li></nuxt-link>
+              <nuxt-link to="/blog"><li :class="this.$route.path == '/blog' ? 'bg-yellow text-white' : 'text-light-purple'" class="font-bold text-sm md:text-base lg:text-lg border-2 px-3 md:px-6 py-1 rounded hover:bg-yellow border-yellow active:text-white hover:text-white transition duration-500 ease-in-out">Blog</li></nuxt-link>
             </ul>
           </div>
         </div>

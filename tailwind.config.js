@@ -6,6 +6,11 @@
 */
 module.exports = {
   theme: {
+    extend: {
+      fontFamily: {
+        sans: ['Proxima Nova'],
+      },
+    },
     colors:{
       'purple': '#3D3D57',
       'purple-dark': '#313146',
